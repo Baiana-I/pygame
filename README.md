@@ -1,15 +1,29 @@
 
 import turtle
+import time
 
 window = turtle.Screen()
-window.setup(1200, 800)
-
+window.title('snake')
+window.setup(500, 500)
 window.bgcolor('green')
-window.screensize(1200, 800)
+window.screensize(500, 500)
+window.tracer(0)
 
-pen = turtle.Turtle()
-for current_x in [-400, -200, 0, 200, 400]:
-    pen.setpos(x=current_x, y=0)
-    pen.circle(radius=100)
-    pen.forward(100)
-window.mainloop()
+score = 0
+high_score = 0
+
+snake = turtle.Turtle()
+snake.color("black")
+snake.speed(0)
+snake.penup()
+snake.goto(0,0)
+snake.direction = "stop"
+
+apple =turtle.Turtle()
+apple.color("red")
+apple.speed(0)
+apple.shape("circle")
+apple.penup()
+apple.goto(0,100)
+
+
